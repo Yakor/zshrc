@@ -102,4 +102,9 @@ else
   TERM=xterm-256color
 fi
 
-[ -f "/home/yakor/.ghcup/env" ] && source "/home/yakor/.ghcup/env" # ghcup-env
+path=('/home/yakor/.ghcup/bin' $path)
+path=('/home/yakor/.cabal/bin' $path)
+# export to sub-processes (make it inherited by child processes)
+export PATH
+
+# [ -f "/home/yakor/.ghcup/env" ] && source "/home/yakor/.ghcup/env" # ghcup-env
